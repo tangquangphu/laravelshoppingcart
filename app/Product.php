@@ -8,6 +8,10 @@ class Product extends Model
 {
     public function presentPrice()
     {
-        // return number_format('$%i', $this->price / 100);
+        // return money_format('$%i', $this->price / 100);
+    }
+    function scopeMightAlsoLike($query)
+    {
+        return $query->inRandomOrder()->take(4);
     }
 }
